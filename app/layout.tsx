@@ -12,9 +12,9 @@ const ibmPlexSerif = IBM_Plex_Serif({
 
 export const metadata: Metadata = {
 	title: "myBank",
-	description: "myBank is a personalized modern banking platform for everyone",
+	description: "myBank is a personalized modern banking platform for everyone.",
 	icons: {
-		icon: "/icons/main-logo.png",
+		icon: "/icons/favicon.png",
 	},
 };
 
@@ -25,9 +25,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body
-				className={`${inter.variable} ${ibmPlexSerif.variable} antialiased`}
-			>
+			<body className={`${inter.variable} ${ibmPlexSerif.variable}`}>
 				{children}
 			</body>
 		</html>
