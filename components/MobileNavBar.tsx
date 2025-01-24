@@ -13,6 +13,7 @@ import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Footer from "./Footer";
 
 const MobileNavBar = ({ user }: MobileNavProps) => {
 	const pathname = usePathname();
@@ -25,23 +26,23 @@ const MobileNavBar = ({ user }: MobileNavProps) => {
 				<SheetContent side="left" className="border-none bg-white">
 					<Link
 						href="/"
-						className="flex cursor-pointer items-center gap-2 px-1"
+						className="flex cursor-pointer items-center gap-1.5 -mt-1.5 -ml-1.5"
 					>
 						<Image
 							src="/icons/logo.png"
 							width={300}
 							height={300}
 							alt="myBank logo"
-							className="size-[34px]"
+							className="size-[28px]"
 						/>
-						<h1 className="text-24 font-ibm-plex-serif font-bold text-[#1B8B00]">
+						<h1 className="text-xl font-ibm-plex-serif font-bold text-[#1B8B00]">
 							MyBank
 						</h1>
 					</Link>
 
 					<div className="mobilenav-sheet">
 						<SheetClose asChild>
-							<nav className="flex h-full flex-col gap-6 pt-16 text-white">
+							<nav className="flex h-full flex-col gap-6 pt-14 text-white">
 								{LeftSideBarLinks.map((item) => {
 									const isActive =
 										pathname === item.route ||
@@ -81,6 +82,8 @@ const MobileNavBar = ({ user }: MobileNavProps) => {
 								})}
 							</nav>
 						</SheetClose>
+
+						<Footer user={user} type="mobile" />
 					</div>
 				</SheetContent>
 			</Sheet>

@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Footer from "./Footer";
 
 const LeftSideBar = ({ user }: LeftSideBarProps) => {
 	const pathname = usePathname();
@@ -17,7 +18,7 @@ const LeftSideBar = ({ user }: LeftSideBarProps) => {
 						width={300}
 						height={300}
 						alt="myBank logo"
-						className="size-8 max-xl:size-14"
+						className="size-[30px] max-xl:size-10"
 					/>
 					<h1 className="left-sidebar-logo">MyBank</h1>
 				</Link>
@@ -53,6 +54,8 @@ const LeftSideBar = ({ user }: LeftSideBarProps) => {
 					);
 				})}
 			</nav>
+
+			<Footer user={user} />
 		</section>
 	);
 };
