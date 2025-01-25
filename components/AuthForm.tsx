@@ -15,6 +15,7 @@ import { Form } from "@/components/ui/form";
 import CustomInput from "./CustomInput";
 import { authFormSchema } from "@/lib/utils";
 import { authUser, registerUser } from "@/lib/actions/user.actions";
+import PlaidLink from "./PlaidLink";
 
 const AuthForm = ({ type }: { type: string }) => {
 	const router = useRouter();
@@ -45,7 +46,21 @@ const AuthForm = ({ type }: { type: string }) => {
 
 			// Register user
 			if (type === "sign-up") {
-				const newUser = await registerUser(data);
+				// ! = means it will be there for typescript eslint
+				const userData = {
+					email: data.email,
+					password: data.password,
+					firstName: data.firstName!,
+					lastName: data.lastName!,
+					address1: data.address1!,
+					city: data.city!,
+					state: data.state!,
+					postalCode: data.postalCode!,
+					dateOfBirth: data.dateOfBirth!,
+					ssn: data.ssn!,
+				};
+
+				const newUser = await registerUser(userData);
 				setUser(newUser);
 			}
 
@@ -60,7 +75,7 @@ const AuthForm = ({ type }: { type: string }) => {
 					router.push("/");
 				} else {
 					toast.error(
-						"Invalid credentials. Please check the email and password."
+						"Invalid credentials. \n Please check the email and password."
 					);
 				}
 			}
@@ -100,7 +115,10 @@ const AuthForm = ({ type }: { type: string }) => {
 				</div>
 			</header>
 			{user ? (
-				<div className="flex flex-col gap-4">{/* Plaid link */}</div>
+				<div className="flex flex-col gap-4">
+					{/* Plaid link */}
+					<PlaidLink user={user} variant="primary" />
+				</div>
 			) : (
 				<>
 					<Form {...form}>
