@@ -67,15 +67,15 @@ const AuthForm = ({ type }: { type: string }) => {
 			// Authenticate user
 			if (type === "sign-in") {
 				const response = await authUser({
-					userEmail: data.email,
-					userPassword: data.password,
+					email: data.email,
+					password: data.password,
 				});
 
 				if (response) {
 					router.push("/");
 				} else {
 					toast.error(
-						"Invalid credentials. \n Please check the email and password."
+						"Invalid credentials. Please check the email and password."
 					);
 				}
 			}

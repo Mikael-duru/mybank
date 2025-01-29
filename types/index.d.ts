@@ -60,7 +60,7 @@ declare type Account = {
 	type: string;
 	subtype: string;
 	appwriteItemId: string;
-	sharableId: string;
+	shareableId: string;
 };
 
 declare type Transaction = {
@@ -89,7 +89,7 @@ declare type Bank = {
 	accessToken: string;
 	fundingSourceUrl: string;
 	userId: string;
-	sharableId: string;
+	shareableId: string;
 };
 
 declare type AccountTypes =
@@ -140,7 +140,7 @@ declare type NewDwollaCustomerParams = {
 declare interface CreditCardProps {
 	account: Account;
 	userName: string;
-	showBalance?: boolean;
+	showBalance: boolean;
 }
 
 declare interface BankInfoProps {
@@ -209,11 +209,6 @@ declare interface TotalBalanceBoxProps {
 	totalCurrentBalance: number;
 }
 
-declare interface FooterProps {
-	user: User;
-	type?: "mobile" | "desktop";
-}
-
 declare interface RightSideBarProps {
 	user: User;
 	transactions: Transaction[];
@@ -228,7 +223,6 @@ declare interface RecentTransactionsProps {
 	accounts: Account[];
 	transactions: Transaction[];
 	appwriteItemId: string;
-	page: number;
 }
 
 declare interface TransactionHistoryTableProps {
@@ -236,8 +230,8 @@ declare interface TransactionHistoryTableProps {
 	page: number;
 }
 
-declare interface CategoryBadgeProps {
-	category: string;
+declare interface StatusBadgeProps {
+	status: string;
 }
 
 declare interface TransactionTableProps {
@@ -295,8 +289,8 @@ declare interface getTransactionsByBankIdProps {
 }
 
 declare interface signInProps {
-	userEmail: string;
-	userPassword: string;
+	email: string;
+	password: string;
 }
 
 declare interface getUserInfoProps {

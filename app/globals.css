@@ -61,7 +61,7 @@
 	}
 
 	.header-2 {
-		@apply text-18 font-semibold text-gray-900;
+		@apply sm:text-18 font-semibold text-gray-900;
 	}
 
 	.text-10 {
@@ -110,7 +110,7 @@
 	}
 
 	.home-content {
-		@apply no-scrollbar flex w-full flex-1 flex-col gap-8 px-5 sm:px-8 py-7 lg:py-12 xl:max-h-screen xl:overflow-y-scroll;
+		@apply no-scrollbar flex w-full flex-1 flex-col gap-8 px-5 sm:px-8 py-7 lg:py-12 xl:max-h-screen xl:overflow-y-scroll shrink-0;
 	}
 
 	.home-header {
@@ -130,7 +130,7 @@
 	}
 
 	.total-balance-amount {
-		@apply text-24 lg:text-30 flex-1 font-semibold text-gray-900;
+		@apply text-24 lg:text-30 flex-1 font-ibm-plex-serif font-semibold text-gray-900;
 	}
 
 	.recent-transactions {
@@ -146,16 +146,16 @@
 	}
 
 	.recent-transactions-label {
-		@apply text-20 md:text-24 font-semibold text-gray-900;
+		@apply text-lg sm:text-24 font-semibold text-gray-900;
 	}
 
 	.recent-transactions-tablist {
-		@apply custom-scrollbar mb-8 flex w-full flex-nowrap;
+		@apply custom-scrollbar mb-8 flex w-full flex-wrap justify-center;
 	}
 
 	/* Right sidebar */
 	.right-sidebar {
-		@apply no-scrollbar hidden h-screen max-h-screen flex-col border-l border-gray-200 xl:flex w-[355px] xl:overflow-y-scroll !important;
+		@apply no-scrollbar hidden h-screen max-h-screen flex-col border-l border-gray-200 xl:flex xl:overflow-y-scroll !important;
 	}
 
 	.profile-banner {
@@ -201,11 +201,11 @@
 	}
 
 	.transactions-account {
-		@apply flex flex-col justify-between gap-4 rounded-lg border-y bg-blue-600 px-4 py-5 md:flex-row;
+		@apply flex flex-col justify-between gap-4 rounded-lg border-y bg-green-600 px-4 py-5 md:flex-row;
 	}
 
 	.transactions-account-balance {
-		@apply flex-center flex-col  gap-2 rounded-md bg-blue-25/20 px-4 py-2 text-white;
+		@apply flex-center flex-col  gap-2 rounded-md bg-green-50/40 px-4 py-2 text-white;
 	}
 
 	.header-box {
@@ -222,16 +222,12 @@
 
 	/* Bank Card */
 	.bank-card {
-		@apply relative flex h-[190px] w-full max-w-[320px] justify-between rounded-[14px] border border-white bg-bank-gradient shadow-creditCard backdrop-blur-[6px];
+		@apply relative flex h-[190px] w-full max-w-[320px] justify-between rounded-[14px] border border-white shadow-creditCard backdrop-blur-[6px];
 	}
 
 	.bank-card_content {
-		@apply relative z-10 flex size-full flex-col justify-between rounded-[14px] bg-gray-700 bg-card-mesh bg-cover bg-no-repeat px-5 pb-2.5 pt-5;
+		@apply relative z-10 flex size-full flex-col justify-between rounded-[14px] bg-gray-700 bg-card-mesh bg-cover bg-no-repeat px-5 py-3;
 	}
-
-	/* .bank-card_icon {
-		@apply flex size-full flex-1 flex-col items-end justify-between rounded-r-[20px] bg-bank-gradient bg-cover bg-center bg-no-repeat py-5 pr-5;
-	} */
 
 	/* Bank Info */
 	.bank-info {
@@ -244,7 +240,7 @@
 	}
 
 	.banktab-item {
-		@apply gap-[18px] border-b-2 flex px-2 sm:px-4 py-2 transition-all;
+		@apply gap-[18px] flex px-2 sm:px-4 py-2 transition-all;
 	}
 
 	/* Mobile nav */
@@ -266,7 +262,7 @@
 	}
 
 	.plaidlink-default {
-		@apply flex !justify-start cursor-pointer gap-3 rounded-lg !bg-transparent flex-row;
+		@apply flex xl:!justify-start cursor-pointer gap-3 rounded-lg !bg-transparent flex-row;
 	}
 
 	/* Auth */
@@ -326,7 +322,7 @@
 
 	/* Root Layout */
 	.root-layout {
-		@apply flex h-16 items-center justify-between p-5 shadow-creditCard sm:p-8 md:hidden;
+		@apply flex h-16 items-center justify-between p-5 shadow-creditCard sm:p-8 lg:hidden;
 	}
 
 	/* Bank Info */
@@ -334,38 +330,9 @@
 		@apply flex flex-1 items-center justify-between gap-2 overflow-hidden;
 	}
 
-	/* Footer */
-	.footer {
-		@apply flex cursor-pointer items-center justify-between gap-2 py-6;
-	}
-
-	.footer_name {
-		@apply flex size-10 items-center justify-center rounded-full bg-gray-200 max-xl:hidden;
-	}
-
-	.footer_email {
-		@apply flex flex-1 flex-col justify-center max-xl:hidden;
-	}
-
-	.footer_name-mobile {
-		@apply flex size-10 items-center justify-center rounded-full bg-gray-200;
-	}
-
-	.footer_email-mobile {
-		@apply flex flex-1 flex-col justify-center;
-	}
-
-	.footer_image {
-		@apply relative size-5 max-xl:w-full max-xl:flex max-xl:justify-center max-xl:items-center;
-	}
-
-	.footer_image-mobile {
-		@apply relative size-5;
-	}
-
 	/* Left Sidebar */
 	.left-sidebar {
-		@apply sticky left-0 top-0 flex h-screen w-fit flex-col  justify-between border-r border-gray-200 bg-white pt-8 text-white max-md:hidden sm:p-4 xl:p-6 2xl:w-[355px];
+		@apply sticky left-0 top-0 flex h-screen w-fit flex-col  justify-between border-r border-gray-200 bg-white pt-8 text-white max-lg:hidden sm:p-4 xl:p-6 2xl:w-[355px];
 	}
 
 	.left-sidebar-logo {

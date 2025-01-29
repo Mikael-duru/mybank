@@ -2,8 +2,9 @@ import { logoutAccount } from "@/lib/actions/user.actions";
 import { LogOut } from "lucide-react";
 
 import { useRouter } from "next/navigation";
+import { Button } from "./ui/button";
 
-const Footer = ({ user, type = "desktop" }: FooterProps) => {
+const Footer = ({ type = "desktop" }: any) => {
 	const router = useRouter();
 
 	const handleLogout = async () => {
@@ -13,28 +14,17 @@ const Footer = ({ user, type = "desktop" }: FooterProps) => {
 	};
 
 	return (
-		<footer className="footer">
-			<div className={type === "mobile" ? "footer_name-mobile" : "footer_name"}>
-				<p className="text-xl font-bold text-gray-700">{user?.name[0]}</p>
-			</div>
-
-			<div
-				className={type === "mobile" ? "footer_email-mobile" : "footer_email"}
-			>
-				<h1 className="text-14 truncate font-semibold text-gray-700">
-					{user?.name}
-				</h1>
-				<p className="text-12 truncate font-normal text-gray-600">
-					{user?.email}
-				</p>
-			</div>
-
-			<div
-				className={type === "mobile" ? "footer_image-mobile" : "footer_image"}
+		<footer className="pb-4 sm:py-6 w-full max-w-[200px]">
+			<Button
 				onClick={handleLogout}
+				className="text-black-2 w-full border-bankGradient hover:text-red-500 flex-1 hover:border-red-500"
+				variant="outline"
 			>
-				<LogOut className="text-gray-600 size-full" />
-			</div>
+				<LogOut className="size-full mr-2" />{" "}
+				<span className={`${type === "mobile" ? "" : "max-xl:hidden"}`}>
+					Log Out
+				</span>
+			</Button>
 		</footer>
 	);
 };

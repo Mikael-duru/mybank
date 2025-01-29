@@ -176,10 +176,10 @@ export function getAccountTypeColors(type: AccountTypes) {
 	switch (type) {
 		case "depository":
 			return {
-				bg: "bg-blue-25",
-				lightBg: "bg-blue-100",
-				title: "text-blue-900",
-				subText: "text-blue-700",
+				bg: "bg-green-25",
+				lightBg: "bg-green-100",
+				title: "text-green-900",
+				subText: "text-green-700",
 			};
 
 		case "credit":
@@ -200,44 +200,44 @@ export function getAccountTypeColors(type: AccountTypes) {
 	}
 }
 
-// export function countTransactionCategories(
-// 	transactions: Transaction[]
-// ): CategoryCount[] {
-// 	const categoryCounts: { [category: string]: number } = {};
-// 	let totalCount = 0;
+export function countTransactionCategories(
+	transactions: Transaction[]
+): CategoryCount[] {
+	const categoryCounts: { [category: string]: number } = {};
+	let totalCount = 0;
 
-// 	// Iterate over each transaction
-// 	transactions &&
-// 		transactions.forEach((transaction) => {
-// 			// Extract the category from the transaction
-// 			const category = transaction.category;
+	// Iterate over each transaction
+	transactions &&
+		transactions.forEach((transaction) => {
+			// Extract the category from the transaction
+			const category = transaction?.category;
 
-// 			// If the category exists in the categoryCounts object, increment its count
-// 			if (categoryCounts.hasOwnProperty(category)) {
-// 				categoryCounts[category]++;
-// 			} else {
-// 				// Otherwise, initialize the count to 1
-// 				categoryCounts[category] = 1;
-// 			}
+			// If the category exists in the categoryCounts object, increment its count
+			if (categoryCounts.hasOwnProperty(category)) {
+				categoryCounts[category]++;
+			} else {
+				// Otherwise, initialize the count to 1
+				categoryCounts[category] = 1;
+			}
 
-// 			// Increment total count
-// 			totalCount++;
-// 		});
+			// Increment total count
+			totalCount++;
+		});
 
-// 	// Convert the categoryCounts object to an array of objects
-// 	const aggregatedCategories: CategoryCount[] = Object.keys(categoryCounts).map(
-// 		(category) => ({
-// 			name: category,
-// 			count: categoryCounts[category],
-// 			totalCount,
-// 		})
-// 	);
+	// Convert the categoryCounts object to an array of objects
+	const aggregatedCategories: CategoryCount[] = Object.keys(categoryCounts).map(
+		(category) => ({
+			name: category,
+			count: categoryCounts[category],
+			totalCount,
+		})
+	);
 
-// 	// Sort the aggregatedCategories array by count in descending order
-// 	aggregatedCategories.sort((a, b) => b.count - a.count);
+	// Sort the aggregatedCategories array by count in descending order
+	aggregatedCategories.sort((a, b) => b.count - a.count);
 
-// 	return aggregatedCategories;
-// }
+	return aggregatedCategories;
+}
 
 export function extractCustomerIdFromUrl(url: string) {
 	// Split the URL string by '/'
