@@ -30,17 +30,12 @@ and many more, including code architecture and reusability.
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js (version 14 or higher)
-- npm or yarn
-
 ### Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/myBank.git
+   git clone https://github.com/Mikael-duru/myBank.git
    cd myBank
    ```
 
@@ -54,31 +49,31 @@ and many more, including code architecture and reusability.
 
 3. Create a `.env.local` file in the root directory and add your environment variables:
 
-   ```plaintext
-  #NEXT
-NEXT_PUBLIC_SITE_URL=
+   ```
+      # NEXT
+      NEXT_PUBLIC_SITE_URL=
 
-#APPWRITE
-NEXT_PUBLIC_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
-NEXT_PUBLIC_APPWRITE_PROJECT=
-APPWRITE_DATABASE_ID=
-APPWRITE_USER_COLLECTION_ID=
-APPWRITE_BANK_COLLECTION_ID=
-APPWRITE_TRANSACTION_COLLECTION_ID=
-APPWRITE_SECRET=
+      #APPWRITE
+      NEXT_PUBLIC_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
+      NEXT_PUBLIC_APPWRITE_PROJECT=
+      APPWRITE_DATABASE_ID=
+      APPWRITE_USER_COLLECTION_ID=
+      APPWRITE_BANK_COLLECTION_ID=
+      APPWRITE_TRANSACTION_COLLECTION_ID=
+      APPWRITE_SECRET=
+      
+      #PLAID
+      PLAID_CLIENT_ID=
+      PLAID_SECRET=
+      PLAID_ENV=
+      PLAID_PRODUCTS=
+      PLAID_COUNTRY_CODES=
 
-#PLAID
-PLAID_CLIENT_ID=
-PLAID_SECRET=
-PLAID_ENV=
-PLAID_PRODUCTS=
-PLAID_COUNTRY_CODES=
-
-#DWOLLA
-DWOLLA_KEY=
-DWOLLA_SECRET=
-DWOLLA_BASE_URL=https://api-sandbox.dwolla.com
-DWOLLA_ENV=sandbox
+      #DWOLLA
+      DWOLLA_KEY=
+      DWOLLA_SECRET=
+      DWOLLA_BASE_URL=https://api-sandbox.dwolla.com
+      DWOLLA_ENV=sandbox
    ```
 
 4. Start the development server:
@@ -98,21 +93,7 @@ DWOLLA_ENV=sandbox
 - Use the transfer feature to manage your funds seamlessly.
 - Analyze your spending habits with visual charts.
 
-## Contributing
-
-Contributions are welcome! If you have suggestions for improvements or features, feel free to open an issue or submit a pull request.
-
-1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/YourFeature`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Open a pull request.
-
 ## Acknowledgments
 
 - Thanks to the creators of the libraries and tools used in this project.
 - Special thanks to the open-source community for their contributions.
-
----
-
-Feel free to customize any sections as needed!
